@@ -1,0 +1,100 @@
+
+/*=======================from======================*/
+
+
+
+.form-container {
+    text-align: left;
+    position: relative;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 15px;
+    width: 900px;
+    margin-left: 100px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between; /* distribute elements evenly */
+    min-height: 80px;
+    background: var(--white);
+    padding: 30px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.9);
+    border-radius: 20px;
+  }
+
+.form {
+    
+    width: 70%;
+    padding: 70px;
+    border-radius: 20px;
+  }
+  
+  #dhcp-settings {
+    display: none;
+  }
+
+  
+  
+  .btn {
+    font-weight: bold;
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 2px;
+    margin-left: 2px;
+  }
+  
+  .btn:hover {
+    background-color: white;
+    color: blue;
+    font-weight: bold;
+  }
+  
+  .btn:active {
+    background-color: blue;
+    color: white;
+  }
+  
+  .btns{
+    margin-left: 70px;
+  }
+ label[for="dhcp"] {
+display: inline-block;
+margin-left: 0px;
+} 
+ input[type="checkbox"] {
+display: inline-block;
+margin-left: 70px;
+}
+
+  .dm {
+    margin-left: 70px;
+    font-weight: bold;
+    margin-right: 10px;
+    display: flex; /* align the label and input in the same line */
+    align-items: center; /* vertically center the elements */
+    margin-bottom: 10px; /* add some spacing between the elements */
+    font-weight: bold;
+  }
+
+  .dmAC {
+    font-weight: bold;
+    display: flex; /* align the label and input in the same line */
+    align-items: center; /* vertically center the elements */
+    margin-bottom: 10px; /* add some spacing between the elements */
+    font-weight: bold;
+  }
+  
+  .inp {
+    margin-left: 70px;
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 10px;
+    width: 700px; /* take up the full width of the container */
+    height: 30px; /* adjust the height as needed */
+  }
+
+/*.modeAuto{display:none;}*/

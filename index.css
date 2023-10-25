@@ -1,0 +1,130 @@
+
+
+/* ======================= Cards ====================== */
+.cardBox {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+
+.cardBox button.on{
+  position: relative;
+  background: var(--white);/*on*/
+  padding: 30px;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease;
+}
+.cardBox button.off{
+  position: relative;
+  background: var(--white);/*off*/
+  padding: 30px;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease;
+}
+.cardBox button.auto{
+  position: relative;
+  background: var(--white);/*auto*/
+  padding: 30px;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease;
+}
+
+.cardBox button.on .cardName {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--blue);/*cardName ON color*/
+}
+.cardBox button.off .cardName {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--blue);/*cardName OFF color*/
+}
+.cardBox button.auto .cardName {
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: var(--blue);/*cardName AUTO color*/
+}
+
+.cardBox button.on .iconBx img {
+  width: 3.2rem;
+  height: 3.2rem;
+  filter: invert(70%) sepia(100%) saturate(500%) hue-rotate(180deg) brightness(80%);/*blueon img*/
+}
+.cardBox button.off .iconBx img {
+  width: 3.2rem;
+  height: 3.2rem;
+  filter: invert(70%) sepia(100%) saturate(500%) hue-rotate(180deg) brightness(80%);/*blueoff img*/
+}
+.cardBox button.auto .iconBx img {
+  width: 3.2rem;
+  height: 3.2rem;
+  filter: invert(70%) sepia(100%) saturate(500%) hue-rotate(180deg) brightness(80%);/*blueauto img*/
+}
+
+.cardBox button.card:hover {
+  background-color: var(--blue);
+  outline: none;
+}
+
+.cardBox button.card:hover .cardName{
+  color: white;
+}
+.cardBox button.card:hover .iconBx img {
+  filter: invert(100%) sepia(100%) hue-rotate(180deg) brightness(1000%);/*white img*/
+}
+
+
+.TEMP {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+.TEMP .card {
+  position: relative;
+  background: var(--white);
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.TEMP .card .cardName {
+  position: relative;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: var(--black2);
+}
+
+.TEMP .card .cardValue {
+  position: relative;
+  font-weight: 500;
+  font-size: 2rem;
+  color: var(--blue);
+}
+
+/*.modeAuto{display:none;}*/

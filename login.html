@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="login.css">
+    <title>Page de connexion</title>
+
+    <style>
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>Bienvenue!</h1>
+            <form method="post" action="/log_in" onsubmit="return validateForm()">
+                <label>Nom d'utilisateur</label>
+                <div>
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="username" name="user" placeholder="Entrer le nom d'utilisateur">
+                    <h3 id="username-error" class="error-message"></h3>
+                </div>
+                <label>Mot de passe</label>
+                <div>
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" id="password" name="passw" placeholder="Entrer le mot de passe">
+                    <h3 id="password-error" class="error-message"></h3>
+                </div>
+                <button type="submit">Se connecter</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var usernameError = document.getElementById("username-error");
+            var passwordError = document.getElementById("password-error");
+
+            if (username !== "admin") {
+                usernameError.innerHTML = "Utilisateur incorrect !";
+                return false; // Prevent form submission
+            } else {
+                usernameError.innerHTML = "";
+            }
+
+            if (password !== "tempuser2023") {
+                passwordError.innerHTML = " Mot de passe incorrect !";
+                return false; // Prevent form submission
+            } else {
+                passwordError.innerHTML = "";
+            }
+
+            return true; // Allow form submission
+        }
+    </script>
+</body>
+
+</html>
+
+

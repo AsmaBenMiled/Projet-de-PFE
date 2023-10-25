@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord</title>
+    <link rel="stylesheet" href="chart.css">
+    <link rel="stylesheet" href="common_style.css">
+    <script src="highcharts.js"></script>
+</head>
+
+<body>
+    <!-- =============== Navigation ================ -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li><a href="#"><span class="icon"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHBhdGggZD0iTTExMiwzMjBjMC05MywxMjQtMTY1LDk2LTI3Miw2NiwwLDE5Miw5NiwxOTIsMjcyYTE0NCwxNDQsMCwwLDEtMjg4LDBaIiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MzJweCIvPjxwYXRoIGQ9Ik0zMjAsMzY4YzAsNTcuNzEtMzIsODAtNjQsODBzLTY0LTIyLjI5LTY0LTgwLDQwLTg2LDMyLTEyOEMyNjYsMjQwLDMyMCwzMTAuMjksMzIwLDM2OFoiIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDA7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS13aWR0aDozMnB4Ii8+PC9zdmc+"></span><span class="title">THERMOSTAT</span></a></li>
+                <li><a href="/index"><span class="icon"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHBhdGggZD0iTTgwLDIxMlY0NDhhMTYsMTYsMCwwLDAsMTYsMTZoOTZWMzI4YTI0LDI0LDAsMCwxLDI0LTI0aDgwYTI0LDI0LDAsMCwxLDI0LDI0VjQ2NGg5NmExNiwxNiwwLDAsMCwxNi0xNlYyMTIiIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDA7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS13aWR0aDozMnB4Ii8+PHBhdGggZD0iTTQ4MCwyNTYsMjY2Ljg5LDUyYy01LTUuMjgtMTYuNjktNS4zNC0yMS43OCwwTDMyLDI1NiIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLXdpZHRoOjMycHgiLz48cG9seWxpbmUgcG9pbnRzPSI0MDAgMTc5IDQwMCA2NCAzNTIgNjQgMzUyIDEzMyIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLXdpZHRoOjMycHgiLz48L3N2Zz4="></span><span class="title">Accueil</span></a></li>
+                <li><a href="/chart"><span class="icon"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PGxpbmUgeDE9IjM0NCIgeTE9IjI4MCIgeDI9IjQzMiIgeTI9IjE5MiIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLXdpZHRoOjMycHgiLz48bGluZSB4MT0iMjMyIiB5MT0iMjE2IiB4Mj0iMjk2IiB5Mj0iMjgwIiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MzJweCIvPjxsaW5lIHgxPSI4MCIgeTE9IjMyMCIgeDI9IjE4NCIgeTI9IjIxNiIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLXdpZHRoOjMycHgiLz48Y2lyY2xlIGN4PSI0NTYiIGN5PSIxNjgiIHI9IjI0IiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MzJweCIvPjxjaXJjbGUgY3g9IjMyMCIgY3k9IjMwNCIgcj0iMjQiIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDA7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS13aWR0aDozMnB4Ii8+PGNpcmNsZSBjeD0iMjA4IiBjeT0iMTkyIiByPSIyNCIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLXdpZHRoOjMycHgiLz48Y2lyY2xlIGN4PSI1NiIgY3k9IjM0NCIgcj0iMjQiIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDA7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS13aWR0aDozMnB4Ii8+PC9zdmc+"></span><span class="title">Tableau de bord</span></a></li>
+                <li><a href="/Param"><span class="icon"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHBhdGggZD0iTTI2Mi4yOSwxOTIuMzFhNjQsNjQsMCwxLDAsNTcuNCw1Ny40QTY0LjEzLDY0LjEzLDAsMCwwLDI2Mi4yOSwxOTIuMzFaTTQxNi4zOSwyNTZhMTU0LjM0LDE1NC4zNCwwLDAsMS0xLjUzLDIwLjc5bDQ1LjIxLDM1LjQ2QTEwLjgxLDEwLjgxLDAsMCwxLDQ2Mi41MiwzMjZsLTQyLjc3LDc0YTEwLjgxLDEwLjgxLDAsMCwxLTEzLjE0LDQuNTlsLTQ0LjktMTguMDhhMTYuMTEsMTYuMTEsMCwwLDAtMTUuMTcsMS43NUExNjQuNDgsMTY0LjQ4LDAsMCwxLDMyNSw0MDAuOGExNS45NCwxNS45NCwwLDAsMC04LjgyLDEyLjE0bC02LjczLDQ3Ljg5QTExLjA4LDExLjA4LDAsMCwxLDI5OC43Nyw0NzBIMjEzLjIzYTExLjExLDExLjExLDAsMCwxLTEwLjY5LTguODdsLTYuNzItNDcuODJhMTYuMDcsMTYuMDcsMCwwLDAtOS0xMi4yMiwxNTUuMywxNTUuMywwLDAsMS0yMS40Ni0xMi41NywxNiwxNiwwLDAsMC0xNS4xMS0xLjcxbC00NC44OSwxOC4wN2ExMC44MSwxMC44MSwwLDAsMS0xMy4xNC00LjU4bC00Mi43Ny03NGExMC44LDEwLjgsMCwwLDEsMi40NS0xMy43NWwzOC4yMS0zMGExNi4wNSwxNi4wNSwwLDAsMCw2LTE0LjA4Yy0uMzYtNC4xNy0uNTgtOC4zMy0uNTgtMTIuNXMuMjEtOC4yNy41OC0xMi4zNWExNiwxNiwwLDAsMC02LjA3LTEzLjk0bC0zOC4xOS0zMEExMC44MSwxMC44MSwwLDAsMSw0OS40OCwxODZsNDIuNzctNzRhMTAuODEsMTAuODEsMCwwLDEsMTMuMTQtNC41OWw0NC45LDE4LjA4YTE2LjExLDE2LjExLDAsMCwwLDE1LjE3LTEuNzVBMTY0LjQ4LDE2NC40OCwwLDAsMSwxODcsMTExLjJhMTUuOTQsMTUuOTQsMCwwLDAsOC44Mi0xMi4xNGw2LjczLTQ3Ljg5QTExLjA4LDExLjA4LDAsMCwxLDIxMy4yMyw0Mmg4NS41NGExMS4xMSwxMS4xMSwwLDAsMSwxMC42OSw4Ljg3bDYuNzIsNDcuODJhMTYuMDcsMTYuMDcsMCwwLDAsOSwxMi4yMiwxNTUuMywxNTUuMywwLDAsMSwyMS40NiwxMi41NywxNiwxNiwwLDAsMCwxNS4xMSwxLjcxbDQ0Ljg5LTE4LjA3YTEwLjgxLDEwLjgxLDAsMCwxLDEzLjE0LDQuNThsNDIuNzcsNzRhMTAuOCwxMC44LDAsMCwxLTIuNDUsMTMuNzVsLTM4LjIxLDMwYTE2LjA1LDE2LjA1LDAsMCwwLTYuMDUsMTQuMDhDNDE2LjE3LDI0Ny42Nyw0MTYuMzksMjUxLjgzLDQxNi4zOSwyNTZaIiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MzJweCIvPjwvc3ZnPg=="></span><span class="title">Configuration</span></a></li>
+                <li><a href="/logout"><span class="icon"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHBhdGggZD0iTTMwNCwzMzZ2NDBhNDAsNDAsMCwwLDEtNDAsNDBIMTA0YTQwLDQwLDAsMCwxLTQwLTQwVjEzNmE0MCw0MCwwLDAsMSw0MC00MEgyNTZjMjIuMDksMCw0OCwxNy45MSw0OCw0MHY0MCIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLXdpZHRoOjMycHgiLz48cG9seWxpbmUgcG9pbnRzPSIzNjggMzM2IDQ0OCAyNTYgMzY4IDE3NiIgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46cm91bmQ7c3Ryb2tlLXdpZHRoOjMycHgiLz48bGluZSB4MT0iMTc2IiB5MT0iMjU2IiB4Mj0iNDMyIiB5Mj0iMjU2IiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6MzJweCIvPjwvc3ZnPg==" alt=""></span><span class="title">Déconnexion</span></a></li>
+            </ul></div>
+
+        <!-- ========================= Main ==================== -->
+        <div class="main"><div class="topbar">
+                <div class="toggle">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PGxpbmUgeDE9IjgwIiB5MT0iMTYwIiB4Mj0iNDMyIiB5Mj0iMTYwIiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO3N0cm9rZS13aWR0aDozMnB4Ii8+PGxpbmUgeDE9IjgwIiB5MT0iMjU2IiB4Mj0iNDMyIiB5Mj0iMjU2IiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO3N0cm9rZS13aWR0aDozMnB4Ii8+PGxpbmUgeDE9IjgwIiB5MT0iMzUyIiB4Mj0iNDMyIiB5Mj0iMzUyIiBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO3N0cm9rZS13aWR0aDozMnB4Ii8+PC9zdmc+" >
+                </div>
+
+                <div class="date"><label><p>MAINTENANT :</p></label>
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBkPSJNMzIsNDU2YTI0LDI0LDAsMCwwLDI0LDI0SDQ1NmEyNCwyNCwwLDAsMCwyNC0yNFYxNzZIMzJaTTM1MiwyMTJhNCw0LDAsMCwxLDQtNGg0MGE0LDQsMCwwLDEsNCw0djQwYTQsNCwwLDAsMS00LDRIMzU2YTQsNCwwLDAsMS00LTRabTAsODBhNCw0LDAsMCwxLDQtNGg0MGE0LDQsMCwwLDEsNCw0djQwYTQsNCwwLDAsMS00LDRIMzU2YTQsNCwwLDAsMS00LTRabS04MC04MGE0LDQsMCwwLDEsNC00aDQwYTQsNCwwLDAsMSw0LDR2NDBhNCw0LDAsMCwxLTQsNEgyNzZhNCw0LDAsMCwxLTQtNFptMCw4MGE0LDQsMCwwLDEsNC00aDQwYTQsNCwwLDAsMSw0LDR2NDBhNCw0LDAsMCwxLTQsNEgyNzZhNCw0LDAsMCwxLTQtNFptMCw4MGE0LDQsMCwwLDEsNC00aDQwYTQsNCwwLDAsMSw0LDR2NDBhNCw0LDAsMCwxLTQsNEgyNzZhNCw0LDAsMCwxLTQtNFptLTgwLTgwYTQsNCwwLDAsMSw0LTRoNDBhNCw0LDAsMCwxLDQsNHY0MGE0LDQsMCwwLDEtNCw0SDE5NmE0LDQsMCwwLDEtNC00Wm0wLDgwYTQsNCwwLDAsMSw0LTRoNDBhNCw0LDAsMCwxLDQsNHY0MGE0LDQsMCwwLDEtNCw0SDE5NmE0LDQsMCwwLDEtNC00Wm0tODAtODBhNCw0LDAsMCwxLDQtNGg0MGE0LDQsMCwwLDEsNCw0djQwYTQsNCwwLDAsMS00LDRIMTE2YTQsNCwwLDAsMS00LTRabTAsODBhNCw0LDAsMCwxLDQtNGg0MGE0LDQsMCwwLDEsNCw0djQwYTQsNCwwLDAsMS00LDRIMTE2YTQsNCwwLDAsMS00LTRaIi8+PHBhdGggZD0iTTQ1Niw2NEg0MDAuMDhWMzJoLTQ4VjY0SDE1OS45MlYzMmgtNDhWNjRINTZBMjMuOCwyMy44LDAsMCwwLDMyLDg3Ljc3VjE0NEg0ODBWODcuNzdBMjMuOCwyMy44LDAsMCwwLDQ1Niw2NFoiLz48L3N2Zz4=" class="svg-img"><span><!--Replace Date--> &nbsp;&nbsp;-&nbsp;&nbsp;</span>
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHBhdGggZD0iTTI1Niw0OEMxNDEuMTMsNDgsNDgsMTQxLjEzLDQ4LDI1NnM5My4xMywyMDgsMjA4LDIwOCwyMDgtOTMuMTMsMjA4LTIwOFMzNzAuODcsNDgsMjU2LDQ4Wm05NiwyNDBIMjU2YTE2LDE2LDAsMCwxLTE2LTE2VjEyOGExNiwxNiwwLDAsMSwzMiwwVjI1Nmg4MGExNiwxNiwwLDAsMSwwLDMyWiIvPjwvc3ZnPg=="><span><!-- PUT TIME--> &nbsp; </span>
+                    <div class="modeAuto"><span>|| &nbsp; </span> <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHBhdGggZD0iTTMyMCwyOTEuMjRWODBhNjQsNjQsMCwxLDAtMTI4LDBWMjkxLjI0QTExMy4zOSwxMTMuMzksMCwwLDAsMTQ0LDM4NGExMTIsMTEyLDAsMCwwLDIyNCwwQTExMy4zOSwxMTMuMzksMCwwLDAsMzIwLDI5MS4yNFpNMjU2LDQzMmE0OCw0OCwwLDAsMS0xNi05My4yNlY5NmgzMlYzMzguNzRBNDgsNDgsMCwwLDEsMjU2LDQzMloiLz48L3N2Zz4="> <span> En mode automatique </span></div>
+                </div>
+
+                
+            </div>
+
+            <!-- ======================= Cards ================== -->
+            <div class="cardBox">
+                
+                <button type="submit" class="card one"  onclick="loadData(1)" ><div class='cardName'>Lun</div></button>
+                <button type="submit" class="card two"  onclick="loadData(2)" ><div class='cardName'>Mar</div></button>
+                <button type="submit" class="card three"onclick="loadData(3)" ><div class="cardName">Mer</div></button>
+                <button type="submit" class="card four" onclick="loadData(4)" ><div class='cardName'>Jeu</div></button>
+                <button type="submit" class="card five" onclick="loadData(5)"><div class='cardName'>Ven</div></button>
+                <button type="submit" class="card six"  onclick="loadData(6)" ><div class="cardName">Sam</div></button>                
+                <button type="submit" class="card seven"onclick="loadData(7)" ><div class="cardName">Dim</div></button>
+
+           </div>
+           <div id="chart-container" class="highcharts-container"></div>
+           <button class="event-button"><a href="/Ajout">Ajouter un événement</a></button></div>
+
+
+<!-- =========== Scripts =========  -->
+    <script> 
+    // Menu Toggle
+let toggle = document.querySelector(".toggle");
+let navigation = document.querySelector(".navigation");
+let main = document.querySelector(".main");
+
+toggle.onclick = function () {
+  navigation.classList.toggle("active");
+  main.classList.toggle("active");
+};
+
+
+//<===============  chart script ================>
+var chart;
+    /*Lundi*/
+    /*Mardi*/
+    /*Mercredi*/ 
+    /*Jeudi*/
+    /*Vendredi*/
+    /*Samedi*/
+    /*Dimanche*/ 
+    /*labels_h*/
+    var  colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink"];
+    /*ID_1*/
+    /*ID_2*/
+    /*ID_3*/
+    /*ID_4*/    
+    /*ID_5*/
+    /*ID_6*/
+    /*ID_7*/
+
+  
+      loadData(1);loadData(2);loadData(3);loadData(4);loadData(5);loadData(6); loadData(7);  loadData(1);loadData(2);loadData(3);loadData(4);loadData(5);loadData(6); loadData(7);
+       
+      Highcharts.AST.allowedAttributes.push('onclick');
+    function loadData(day) {
+      // load data for the specified day from the server or local storage
+
+      var data = getDataForDay(day);
+
+      if (!chart) {
+        // if the chart doesn't exist yet, create it
+        chart = Highcharts.chart('chart-container', {
+          chart: {
+            type: 'line'
+          },
+          title: {
+            text: 'Programme de la semaine'
+          },
+          xAxis: {
+            categories: labels_h
+          },
+          yAxis: {
+            title: {
+              text: 'Température'
+            }
+          },
+          legend: {
+            enabled: false
+          },
+          tooltip: {
+  	outside: true,
+  	shared: true,
+    useHTML: true,
+    pointFormatter: function() {
+      var id = this.id;
+    return '<div >' + 
+  '<hr><div>' + this.y + '</div>' + 
+  '<div style="display: inline-block; width: 180px; height: 20px; z-index: 1000000; text-align: center;">' + 
+  '<button class="delete" onclick="sendIdToServer_delete('+id+')">SUPPRIMER</button>' + 
+  '<button class="modify" onclick="sendIdToServer_modify('+id+')">MODIFIER</button>' + 
+  '</div></div>';
+},
+    style: {
+      pointerEvents: 'auto'
+    }
+  },
+          legend: {
+            enabled: false
+          },
+          plotOptions: {
+            line: {
+              step: 'left',
+              connectNulls: true,
+              dataLabels: {
+                enabled: true,
+                format: '{y}°C'
+              }
+            }
+          },
+          series: [] // empty series array
+        });
+       
+        // add all series to the chart
+        for (var i = 1; i <= 7; i++) {
+          var seriesData = getDataForDay(i);
+          var color = colors[i - 1];
+          chart.addSeries({
+            name: 'Temperature ' + i,
+            data: seriesData,
+            color: color
+          });
+        }
+      }
+      // check if the chart already has a series with the same name
+      var existingSeriesIndex = chart.series.findIndex(function(series) {
+        return series.name === 'Temperature ' + day;
+      });
+
+      if (existingSeriesIndex === -1) {
+        // if the series doesn't exist, add a new one
+        var color = colors[day - 1];
+        chart.addSeries({
+          name: 'Temperature ' + day,
+          data: data,
+          color: color
+        });
+
+      } else {
+        // if the series exists, remove it from the chart
+        chart.series[existingSeriesIndex].remove();
+      }
+ 
+}
+
+function sendIdToServer_delete(id) {
+  var form = document.createElement("form");
+  form.setAttribute("method", "post");
+  form.setAttribute("action", "/delete");
+
+  var hiddenField = document.createElement("input");
+  hiddenField.setAttribute("type", "hidden");
+  hiddenField.setAttribute("name", "delete-id");
+  hiddenField.setAttribute("value", id);
+  form.appendChild(hiddenField);
+
+  document.body.appendChild(form);
+
+  form.submit();
+}
+
+function sendIdToServer_modify(id) {
+  var form = document.createElement("form");
+  form.setAttribute("method", "post");
+  form.setAttribute("action", "/modify");
+
+  var hiddenField = document.createElement("input");
+  hiddenField.setAttribute("type", "hidden");
+  hiddenField.setAttribute("name", "modify-id");
+  hiddenField.setAttribute("value", id);
+  form.appendChild(hiddenField);
+
+  document.body.appendChild(form);
+
+  form.submit();
+}
+      function getLabelsForDay(day) {
+        var labels;
+        if (day == '1') { labels = Lundi}
+        if (day == '2') {labels =  Mardi}  
+        if (day == '3') {labels =  Mercredi;}
+        if (day == '4') {labels = Jeudi;}
+        if (day == '5') {labels = Vendredi;}
+        if (day == '6') {labels = Samedi;}
+        if (day == '7') {labels = Dimanche;}
+  
+        return labels;
+      }
+  
+      function getDataForDay(day) {
+      if (day == '1'){   var temperatures = /*temp1*/;}
+      if (day == '2') {  var temperatures = /*temp2*/;} 
+      if (day == '3') {  var temperatures = /*temp3*/;} 
+      if (day == '4') {  var temperatures = /*temp4*/;} 
+      if (day == '5') {  var temperatures = /*temp5*/;} 
+      if (day == '6') {  var temperatures = /*temp6*/;} 
+      if (day == '7') {  var temperatures = /*temp7*/;}
+
+        var data = [];
+        for (var i = 0; i < temperatures.length; i++) {
+            if (day == '1'){   data.push({y: parseFloat(temperatures[i]), id: ID_1[i]});  }
+            if (day == '2'){   data.push({y: parseFloat(temperatures[i]), id: ID_2[i]});  }
+            if (day == '3'){   data.push({y: parseFloat(temperatures[i]), id: ID_3[i]}); }
+            if (day == '4'){   data.push({y: parseFloat(temperatures[i]), id: ID_4[i]}); }
+            if (day == '5'){   data.push({y: parseFloat(temperatures[i]), id: ID_5[i]}); }
+            if (day == '6'){   data.push({y: parseFloat(temperatures[i]), id: ID_6[i]}); }
+            if (day == '7'){   data.push({y: parseFloat(temperatures[i]), id: ID_7[i]}); }
+        }
+        return data;
+      }
+  </script>
+</body>
+</html>
+
+ 

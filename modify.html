@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <meta charset="UTF-8"> <title>Thermostat - Modifier un événement</title> <link rel="stylesheet" type="text/css" href="eventAj.css"> </head>
+<body>
+    <div class="date"> 
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBkPSJNMzIsNDU2YTI0LDI0LDAsMCwwLDI0LDI0SDQ1NmEyNCwyNCwwLDAsMCwyNC0yNFYxNzZIMzJaTTM1MiwyMTJhNCw0LDAsMCwxLDQtNGg0MGE0LDQsMCwwLDEsNCw0djQwYTQsNCwwLDAsMS00LDRIMzU2YTQsNCwwLDAsMS00LTRabTAsODBhNCw0LDAsMCwxLDQtNGg0MGE0LDQsMCwwLDEsNCw0djQwYTQsNCwwLDAsMS00LDRIMzU2YTQsNCwwLDAsMS00LTRabS04MC04MGE0LDQsMCwwLDEsNC00aDQwYTQsNCwwLDAsMSw0LDR2NDBhNCw0LDAsMCwxLTQsNEgyNzZhNCw0LDAsMCwxLTQtNFptMCw4MGE0LDQsMCwwLDEsNC00aDQwYTQsNCwwLDAsMSw0LDR2NDBhNCw0LDAsMCwxLTQsNEgyNzZhNCw0LDAsMCwxLTQtNFptMCw4MGE0LDQsMCwwLDEsNC00aDQwYTQsNCwwLDAsMSw0LDR2NDBhNCw0LDAsMCwxLTQsNEgyNzZhNCw0LDAsMCwxLTQtNFptLTgwLTgwYTQsNCwwLDAsMSw0LTRoNDBhNCw0LDAsMCwxLDQsNHY0MGE0LDQsMCwwLDEtNCw0SDE5NmE0LDQsMCwwLDEtNC00Wm0wLDgwYTQsNCwwLDAsMSw0LTRoNDBhNCw0LDAsMCwxLDQsNHY0MGE0LDQsMCwwLDEtNCw0SDE5NmE0LDQsMCwwLDEtNC00Wm0tODAtODBhNCw0LDAsMCwxLDQtNGg0MGE0LDQsMCwwLDEsNCw0djQwYTQsNCwwLDAsMS00LDRIMTE2YTQsNCwwLDAsMS00LTRabTAsODBhNCw0LDAsMCwxLDQtNGg0MGE0LDQsMCwwLDEsNCw0djQwYTQsNCwwLDAsMS00LDRIMTE2YTQsNCwwLDAsMS00LTRaIi8+PHBhdGggZD0iTTQ1Niw2NEg0MDAuMDhWMzJoLTQ4VjY0SDE1OS45MlYzMmgtNDhWNjRINTZBMjMuOCwyMy44LDAsMCwwLDMyLDg3Ljc3VjE0NEg0ODBWODcuNzdBMjMuOCwyMy44LDAsMCwwLDQ1Niw2NFoiLz48L3N2Zz4=" class="svg-img"><span><!--Replace Date--> &nbsp;&nbsp;-&nbsp;&nbsp;</span>
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHBhdGggZD0iTTI1Niw0OEMxNDEuMTMsNDgsNDgsMTQxLjEzLDQ4LDI1NnM5My4xMywyMDgsMjA4LDIwOCwyMDgtOTMuMTMsMjA4LTIwOFMzNzAuODcsNDgsMjU2LDQ4Wm05NiwyNDBIMjU2YTE2LDE2LDAsMCwxLTE2LTE2VjEyOGExNiwxNiwwLDAsMSwzMiwwVjI1Nmg4MGExNiwxNiwwLDAsMSwwLDMyWiIvPjwvc3ZnPg=="><span><!-- PUT TIME--> &nbsp; </span>
+        <div class="modeAuto"><span>|| &nbsp; </span> <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHBhdGggZD0iTTMyMCwyOTEuMjRWODBhNjQsNjQsMCwxLDAtMTI4LDBWMjkxLjI0QTExMy4zOSwxMTMuMzksMCwwLDAsMTQ0LDM4NGExMTIsMTEyLDAsMCwwLDIyNCwwQTExMy4zOSwxMTMuMzksMCwwLDAsMzIwLDI5MS4yNFpNMjU2LDQzMmE0OCw0OCwwLDAsMS0xNi05My4yNlY5NmgzMlYzMzguNzRBNDgsNDgsMCwwLDEsMjU2LDQzMloiLz48L3N2Zz4="> <span> En mode automatique </span></div>
+    </div>  
+<div class="container" id="cont">
+<div class="content"><h2>Modifier un événement</h2>
+<form id="event-form" action="/save" method="post">
+<table> <tr> <td>Jours de la semaine :</td> <td> <!-- TO BE REPLACED DAYS --> <input type="hidden" name="id_m" value="MODIFY_ID"></td> </tr><tr><td><label for="heure">Heure :</label></td><td><input type="time" id="heure" name="heure" value='REPLACE_HEURE'> </td></tr><tr><td><label for="temp">Température :</label></td><td><input type="number" id="temp" name="temp" min="0" max="40" value='REPLACE_TEMP'> <br><br></td></tr></table><br>
+<button value="submit" type="submit">Enregistrer</button><button type="submit"><a href="/chart" class="button">Annuler</a></button>
+</form></div></div>
+</body></html>

@@ -1,0 +1,32 @@
+.container {  text-align: left;
+    position: relative;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 130px;
+    width: 900px;
+    margin-left: 190px;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between; /* distribute elements evenly */
+    min-height: 80px;
+    background: var(--white);
+    padding: 30px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.9);
+    border-radius: 20px;}
+.content {background-color: #fff; font-weight: bold; border-radius: 15px;padding: 20px;max-width: 600px;width: 100%;text-align: center;margin-left: 120px;}
+table {border: 1px solid black;border-collapse: collapse;}
+td {border: 1px solid rgb(0, 0, 0);padding: 5px;}
+label {display: inline-block;width: 100px;text-align: right;margin-right: 10px;}
+input[type="date"], input[type="time"], input[type="number"] {width: 200px;height: 30px;margin-bottom: 10px;border-radius: 3px;border: 1px solid #ccc;padding: 5px;box-sizing: border-box;font-size: 16px;}
+button[type="submit"] {background-color: #0606c0;color: #fff;border: none;border-radius: 3px;padding: 10px 20px;font-size: 16px;cursor: pointer;margin-top: 10px;margin-left: 5px;}
+.weekdays {display: flex;justify-content: center;margin-bottom: 10px;}
+.weekdays label {margin: 0 10px;}
+.weekdays input[type="checkbox"] {margin-right: 5px;}
+.hidden {display: none;}
+a{color : white;text-decoration: none;}
+.date{margin-left: 200px;display:flex;align-items:center;margin-bottom:0px;width:100%;justify-content:flex-start;margin-right:20px;}
+.date label{margin-right:20px;margin-left:10px;}
+.date span{font-size:1.2rem;font-weight:500;color:var(--black2);margin-left:10px;margin-right:10px;}
+.date p{font-size:1.2rem;font-weight:500;color:var(--blue);margin:0;margin-left:10px;}
+.date img{width:1.5rem;height:1.5rem;filter:grayscale(100%);}
+/*.modeAuto{display:none;}*/
